@@ -9,18 +9,22 @@ import PostListView from '@/views/posts/PostListView.vue';
 const routes = [
 	{
 		path: '/',
+		name: 'HomeView',
 		component: HomeView,
 	},
 	{
 		path: '/about',
+		name: 'AboutView',
 		component: AboutView,
 	},
 	{
 		path: '/posts',
+		name: 'PostListView',
 		component: PostListView,
 	},
 	{
 		path: '/posts/create',
+		name: 'PostCreateView',
 		component: PostCreateView,
 	},
 	{
@@ -30,6 +34,7 @@ const routes = [
 	},
 	{
 		path: '/posts/:id/edit',
+		name: 'PostEditView',
 		component: PostEditView,
 	},
 ];
