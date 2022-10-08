@@ -25,6 +25,7 @@ const routes = [
 	},
 	{
 		path: '/posts/:id/',
+		name: 'PostDetailView',
 		component: PostDetailView,
 	},
 	{
