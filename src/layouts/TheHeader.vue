@@ -2,7 +2,7 @@
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Navbar</a>
+				<RouterLink class="navbar-brand" to="/">HappyGGang</RouterLink>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -17,7 +17,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<RouterLink class="nav-link active" to="/">HappyGGang</RouterLink>
+							<RouterLink class="nav-link active" to="/">Home</RouterLink>
 						</li>
 						<li class="nav-item">
 							<RouterLink class="nav-link" to="/about">About</RouterLink>
