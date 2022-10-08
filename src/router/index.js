@@ -6,6 +6,7 @@ import PostDetailView from '@/views/posts/PostDetailView.vue';
 import PostEditView from '@/views/posts/PostEditView.vue';
 import PostListView from '@/views/posts/PostListView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
+import NestedView from '@/views/nested/NestedView.vue';
 
 const routes = [
 	{
@@ -42,6 +43,11 @@ const routes = [
 		path: '/:pathMatch(.*)*',
 		name: 'NotFoundView',
 		component: NotFoundView,
+	},
+	{
+		path: '/nested',
+		name: 'NestedView',
+		component: NestedView,
 	},
 ];
 
