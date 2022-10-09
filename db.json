@@ -1,10 +1,10 @@
 {
   "posts": [
     {
-      "id": 1,
       "title": "제목1",
       "content": "내용1",
-      "createdAt": "2020-01-01"
+      "createdAt": "2020-01-01",
+      "id": 1
     },
     {
       "id": 2,
@@ -43,9 +43,8 @@
       "createdAt": "2020-01-07"
     },
     {
-      "title": "test",
-      "content": "test",
-      "createdAt": 1665311462288,
+      "title": "testsetsetsetset",
+      "content": "teststestet",
       "id": 8
     }
   ]
