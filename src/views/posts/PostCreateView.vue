@@ -29,7 +29,7 @@
 				>
 					목록
 				</button>
-				<button type="button" class="btn btn-primary">저장</button>
+				<button class="btn btn-primary">저장</button>
 			</div>
 		</form>
 	</div>
