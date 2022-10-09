@@ -1,7 +1,3 @@
-import { isTemplateNode } from '@vue/compiler-core';
-
-import { findDir } from '@vue/compiler-core';
-
 const posts = [
 	{ id: 1, title: '제목1', content: '내용1', createdAt: '2020-01-01' },
 	{ id: 2, title: '제목2', content: '내용2', createdAt: '2020-01-02' },
