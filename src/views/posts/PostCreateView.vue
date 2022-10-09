@@ -2,7 +2,7 @@
 	<div>
 		<h1>게시글 등록</h1>
 		<hr class="my-4" />
-		<form @submit.prevent>
+		<form @submit.prevent="save">
 			<div class="mb-3">
 				<label for="title" class="form-label">제목</label>
 				<input
@@ -51,6 +51,7 @@ const save = () => {
 			...form.value,
 			createdAt: Date.now(),
 		});
+		router.push({ name: 'PostListView' });
 	} catch (error) {
 		console.log(error);
 	}
