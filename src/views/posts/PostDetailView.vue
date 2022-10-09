@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<h1>제목</h1>
-		<p>내용</p>
-		<p>202-01-01</p>
+		<h1>{{ form.title }}</h1>
+		<p>{{ form.content }}</p>
+		<p>{{ form.createdAt }}</p>
 		<hr class="my-4" />
 		<div class="row g-2">
 			<div class="col-auto">
@@ -29,11 +29,19 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
+import { getPostById } from '@/api/posts.js';
+import { ref } from 'vue';
 
 const route = useRoute();
 const router = useRouter();
 const id = route.params.id;
+const form = ref({});
 
+const fetchPost = () => {
+	const data = getPostById(id);
+	form.value = { ...data };
+};
+fetchPost();
 const goListPage = () => router.push({ name: 'PostListView' });
 const goEditPage = () => router.push({ name: 'PostEditView', params: { id } });
 </script>
