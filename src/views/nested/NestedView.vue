@@ -2,16 +2,10 @@
 	<div>
 		<ul class="nav nav-pills">
 			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Active</a>
+				<a class="nav-link active" aria-current="page" href="#">Nested1</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link disabled">Disabled</a>
+				<a class="nav-link" href="#">Nested2</a>
 			</li>
 		</ul>
 	</div>
