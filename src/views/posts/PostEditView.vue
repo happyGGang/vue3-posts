@@ -2,7 +2,7 @@
 	<div>
 		<h1>게시글 수정</h1>
 		<hr class="my-4" />
-		<form @submit.prevent>
+		<form @submit.prevent="edit">
 			<div class="mb-3">
 				<label for="title" class="form-label">제목</label>
 				<input type="text" class="form-control" id="title" />
@@ -26,12 +26,35 @@
 </template>
 
 <script setup>
+import { getPostById, updatePost } from '@/api/posts.js';
+import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
-
 const id = route.params.id;
+
+const form = ref({
+	title: null,
+	content: null,
+});
+const fetchPost = async () => {
+	const { data } = await getPostById(id);
+	setForm(data);
+};
+const setForm = ({ title, content }) => {
+	form.value.title = title;
+	form.value.content = content;
+};
+fetchPost();
+const edit = async () => {
+	try {
+		await updatePost(id, { ...form.value });
+		router.push({ name: 'PostDetailView', params: { id } });
+	} catch (error) {
+		console.log(error);
+	}
+};
 const goDetailPage = () =>
 	router.push({ name: 'PostDetailView', params: { id } });
 </script>
