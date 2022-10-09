@@ -21,24 +21,28 @@
 				</button>
 			</div>
 			<div class="col-auto">
-				<button class="btn btn-outline-danger">삭제</button>
+				<button class="btn btn-outline-danger" @click="remove">삭제</button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { useRoute, useRouter } from 'vue-router';
-import { getPostById } from '@/api/posts.js';
+import { useRouter } from 'vue-router';
+import { getPostById, deletePost } from '@/api/posts.js';
 import { ref } from 'vue';
 
-const route = useRoute();
+const props = defineProps({
+	id: Number,
+});
+
+//const route = useRoute();
 const router = useRouter();
-const id = route.params.id;
+//const id = route.params.id;
 const post = ref({});
 
 const fetchPost = async () => {
-	const { data } = await getPostById(id);
+	const { data } = await getPostById(props.id);
 	setPost(data);
 };
 const setPost = ({ title, content, createAt }) => {
@@ -47,8 +51,19 @@ const setPost = ({ title, content, createAt }) => {
 	post.value.createAt = createAt;
 };
 fetchPost();
+const remove = async () => {
+	try {
+		if (confirm('삭제하시겠습니까?')) {
+			await deletePost(props.id);
+			router.push({ name: 'PostListView' });
+		}
+	} catch (error) {
+		console.log(error);
+	}
+};
 const goListPage = () => router.push({ name: 'PostListView' });
-const goEditPage = () => router.push({ name: 'PostEditView', params: { id } });
+const goEditPage = () =>
+	router.push({ name: 'PostEditView', params: { id: props.id } });
 </script>
 
 <style lang="scss" scoped></style>

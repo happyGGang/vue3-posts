@@ -33,6 +33,7 @@ const routes = [
 		path: '/posts/:id/',
 		name: 'PostDetailView',
 		component: PostDetailView,
+		props: true,
 	},
 	{
 		path: '/posts/:id/edit',
