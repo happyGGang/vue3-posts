@@ -2,6 +2,16 @@
 	<div>
 		<h1>게시글 목록</h1>
 		<hr class="my-4" />
+		<div class="row">
+			<div class="col-3">
+				<select v-model="params._limit" class="form-select">
+					<option value="3">3</option>
+					<option value="6">6</option>
+					<option value="9">9</option>
+				</select>
+			</div>
+		</div>
+		<hr class="my-4" />
 		<div class="row g-3">
 			<div v-for="post in posts" :key="post.id" class="col-4">
 				<PostItem
