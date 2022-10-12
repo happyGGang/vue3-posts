@@ -79,7 +79,9 @@ const params = ref({
 });
 
 const totalCount = ref(0);
-const pageCount = computed(() => totalCount.value / params.value._limit);
+const pageCount = computed(() =>
+	Math.ceil(totalCount.value / params.value._limit),
+);
 const fetchPost = async () => {
 	try {
 		const { data, headers } = await getPosts(params.value);
